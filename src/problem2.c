@@ -9,7 +9,7 @@ uint64_t fib(uint64_t *first, uint64_t *second)
 }
 int main(void)
 {
-	uint64_t sum = 0;
+	uint64_t sum = 2; /* 1 + 1 , the first two terms */
 	uint64_t first = 1;
 	uint64_t second = 2;
 
