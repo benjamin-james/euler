@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -W -Wall -Werror
+CFLAGS = -W -Wall -Werror -g -O2
 LDFLAGS = -lm
 
 TARGETS = problem1 problem2 problem3
