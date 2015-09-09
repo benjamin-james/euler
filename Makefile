@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -W -Wall -Werror -g -O2
 LDFLAGS = -lm
 
-TARGETS = problem1 problem2 problem3 problem4
+TARGETS = problem1 problem2 problem3 problem4 problem5
 
 SOURCES = $(addprefix src/, $(addsuffix .c, $(TARGETS)))
 
