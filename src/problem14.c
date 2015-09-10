@@ -1,11 +1,11 @@
-#include <assert.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <inttypes.h>
+
+#define MAX_NUM 1000000
 
 int main(void)
 {
-	uint64_t longest, longest_i, i, num, len, max = 1000000;
+	uint64_t longest, longest_i, i, num, len, max = MAX_NUM;
 	for (longest = longest_i = 0, i = 2; i < max; i++) {
 		for (len = 0, num = i; num != 1; len++) {
 			if (num % 2 == 0)
