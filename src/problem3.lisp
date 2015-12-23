@@ -1,15 +1,15 @@
-;; yeah whine about internal state but this is far more efficient
-(defvar *primes-list* '(2 3))
 
-(defun prime-p (n)
-  (dolist (p *primes-list*)
-    (if (= n p)
-	t)
-    (if (or
-	 nil
-	 (zerop (mod n p)))
-	nil))
+(defun prime-p (n &optional (d 2))
+  (or (>= d n)
+      (and (/= (rem n d) 0)
+	   (prime-p n (+ d 1)))))
 
-  (setf *primes-list* (append *primes-list* (list n)))
-  t)
+(defun max-prime-factor (n)
+  (do ((i (floor (sqrt n)) (1- i)))
+      ((< i 4) i)
+    (if (and (= 0 (mod n i))
+	     (prime-p i))
+	(return-from max-prime-factor i))))
 
+(defun problem3 (&optional (number 600851475143))
+  (format t "The largest prime factor of ~d is ~d" number (max-prime-factor number)))
