@@ -19,10 +19,12 @@ long get_greatest_product(const char *number, int strl, int num_digits)
 			max = temp;
 	return max;
 }
-int main(void)
+int problem8(void)
 {
 	char number[1001] = NUMBER;
 	long num = get_greatest_product(number, 1000, 13);
 	printf("The greatest product of %d adjacent digits in the number\n%s\nis %ld\n", 13, number, num);
 	return 0;
 }
+
+#undef NUMBER

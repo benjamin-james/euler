@@ -14,7 +14,7 @@ int is_palindrome(const char *s)
 }
 
 #define BUF_SIZE 256
-int main(void)
+int problem4(void)
 {
 	int i, j, largest, product;
 	char buffer[BUF_SIZE];
@@ -29,3 +29,5 @@ int main(void)
 	printf("The largest palindrome made from the product of two 3 digit numbers is %d\n", largest);
 	return 0;
 }
+
+#undef BUF_SIZE

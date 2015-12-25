@@ -7,7 +7,7 @@ uint64_t fib(uint64_t *first, uint64_t *second)
 	*first = *second;
 	return (*second += temp);
 }
-int main(void)
+int problem2(void)
 {
 	uint64_t sum = 2; /* 1 + 1 , the first two terms */
 	uint64_t first = 1;

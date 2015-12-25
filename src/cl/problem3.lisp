@@ -12,4 +12,4 @@
 	(return-from max-prime-factor i))))
 
 (defun problem3 (&optional (number 600851475143))
-  (format t "The largest prime factor of ~d is ~d" number (max-prime-factor number)))
+  (format t "The largest prime factor of ~d is ~d~%" number (max-prime-factor number)))

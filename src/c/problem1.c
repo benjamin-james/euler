@@ -2,7 +2,7 @@
 
 #define MAX_NUM 1000
 
-int main(void)
+int problem1(void)
 {
 	int i, sum = 0;
 	for (i = 1; i < MAX_NUM; i++)
@@ -11,3 +11,5 @@ int main(void)
 	printf("The sum of all multiples of 3 or 5 below %d is %d\n", MAX_NUM, sum);
 	return 0;
 }
+
+#undef MAX_NUM

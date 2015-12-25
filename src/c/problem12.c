@@ -25,7 +25,7 @@ int num_divisors(int n, int cutoff)
 }
 #define NUM_DIVISORS 500
 
-int main(void)
+int problem12(void)
 {
 	int i, num, found = 0;
 	for (i = 1; !found; i++)
@@ -34,3 +34,5 @@ int main(void)
 	printf("The first triangle number to have over %d divisors is %d with %d divisors\n", NUM_DIVISORS, num, num_divisors(num, NUM_DIVISORS / 2));
 	return 0;
 }
+
+#undef NUM_DIVISORS

@@ -1,15 +1,19 @@
 CC = gcc
+CPPFLAGS += -Isrc/c/
 CFLAGS += -W -Wall -Werror -g -O2 -pipe
-LDFLAGS += -lm -lgmp
+LDFLAGS += -lm -lgmp -g -O2
 
-TARGETS = problem1 problem2 problem3 problem4 problem5 problem6 problem7 problem8 problem9 problem10 \
-	problem11 problem12 problem13 problem14
+TARGETS = c-euler
 
-SOURCES = $(addprefix src/, $(addsuffix .c, $(TARGETS)))
-
+SOURCES = $(wildcard src/c/*)
+OBJECTS = $(shell echo $(wildcard src/c/*.c) | sed 's/\.c/\.o/g')
 all: $(TARGETS)
 
-%: src/%.c
-	$(CC) $(CPPFLAGS) $(CFLAGS) $< -o $@ $(LDFLAGS)
+c-euler: $(OBJECTS)
+	$(CC) $(OBJECTS) -o $@ $(LDFLAGS)
+
+src/c/%.o: src/c/%.c
+	$(CC) -c $(CPPFLAGS) $(CFLAGS) -o $@ $<
 clean:
 	$(RM) $(TARGETS)
+	$(RM) $(wildcard src/c/*.o)

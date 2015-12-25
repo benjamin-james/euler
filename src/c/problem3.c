@@ -14,7 +14,7 @@ int is_prime(uint64_t num)
 			return 0;
 	return 1;
 }
-int main(void)
+int problem3(void)
 {
 	uint64_t number = NUMBER;
 	uint64_t sq = sqrt(NUMBER);
@@ -34,3 +34,5 @@ int main(void)
 	printf("The largest prime factor of %" PRIu64 " is %" PRIu64 "\n", NUMBER, largest);
 	return 0;
 }
+
+#undef NUMBER

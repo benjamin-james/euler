@@ -4,7 +4,7 @@
 
 #define NUM 100
 
-int main(void)
+int problem13(void)
 {
 	int i;
 	char *str;
@@ -129,3 +129,4 @@ int main(void)
 	return 0;
 }
 
+#undef NUM

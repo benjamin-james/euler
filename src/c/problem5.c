@@ -8,7 +8,7 @@ int is_divisible_by_all_to(long l, long num)
 			return 0;
 	return 1;
 }
-int main(void)
+int problem5(void)
 {
 	long i;
 	for (i = 20; is_divisible_by_all_to(i, 20) == 0; i += 20);

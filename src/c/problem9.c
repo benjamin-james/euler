@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void)
+int problem9(void)
 {
 	int a, b, c;
 	for (c = 1; c < 1000; c++) {

@@ -16,7 +16,7 @@ int array_add(long *array, int element, int *size, int *alloc)
 	array[*size] = element;
 	return (*size)++;
 }
-int is_prime(long *list, int num, int size)
+int is_prime_list(long *list, int num, int size)
 {
 	int i;
 	long sq = sqrt(num);
@@ -35,9 +35,11 @@ int add_next_prime_under(long *list, int *size, int *alloc, int num)
 	if (*size == 1)
 		return array_add(list, 3, size, alloc);
 	int i;
-	for (i = 5; i < num; i += 2)
-		if (is_prime(list, i, *size))
+	for (i = 5; i < num; i += 2) {
+		if (is_prime_list(list, i, *size)) {
 			return array_add(list, i, size, alloc);
+		}
+	}
 	return -1;
 }
 
@@ -50,7 +52,7 @@ long array_sum(long *array, int size)
 	}
 	return sum;
 }
-int main(void)
+int problem10(void)
 {
 	int num_primes = 2000000;
 	int *primes = malloc(sizeof *primes * num_primes);
@@ -59,9 +61,11 @@ int main(void)
 	for (i = 0; i < num_primes; i++)
 		primes[i] = i;
 	for (i = 2; i < sr;) {
-		for (j = i + 1; j < num_primes; j++)
-			if (primes[j] % i == 0)
+		for (j = i + 1; j < num_primes; j++) {
+			if (primes[j] % i == 0) {
 				primes[j] = 0;
+			}
+		}
 		for (j = i + 1; j < num_primes; j++) {
 			if (primes[j] != 0) {
 				i = j;
@@ -69,9 +73,11 @@ int main(void)
 			}
 		}
 	}
-	for (sum = 0, i = 2; i < num_primes; i++)
-		if (primes[i] != 0)
+	for (sum = 0, i = 2; i < num_primes; i++) {
+		if (primes[i] != 0) {
 			sum += primes[i];
+		}
+	}
 	printf("The sum of the all primes under %d is %ld\n", num_primes, sum);
 	free(primes);
 	return 0;

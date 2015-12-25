@@ -42,7 +42,7 @@ int get_diag_up_prod(int x, int y)
 		return 0;
 	return array[x][y] * array[x + 1][y - 1] * array[x + 2][y - 2] * array[x + 3][y - 3];
 }
-int main(void)
+int problem11(void)
 {
 	int largest = 0;
 	int i, j, temp;
@@ -61,3 +61,6 @@ int main(void)
 	printf("The greatest product of four adjacent numbers int the same direction in the %dx%d grid is %d\n", NUM_ROWS, NUM_COLS, largest);
 	return 0;
 }
+
+#undef NUM_ROWS
+#undef NUM_COLS

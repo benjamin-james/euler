@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <inttypes.h>
 
-int main(void)
+int problem6(void)
 {
 	uint64_t sum = 0;
 	uint64_t squares = 0;
