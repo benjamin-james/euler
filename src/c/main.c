@@ -38,13 +38,22 @@ int do_problem(int num)
 	return -1;
 }
 
+
 int main(int argc, char **argv)
 {
 	long num;
 	char *endptr = NULL;
-	if (argc < 2 || (num = strtol(argv[1], &endptr, 10)) <= 0 || *endptr || do_problem((int)num) < 0) {
+	int i;
+	if (argc < 2) {
 		printf("Usage: %s [problem number]\n", *argv);
 		return 0;
+	}
+	for (i = 1; i < argc; i++) {
+		num = strtol(argv[i], &endptr, 10);
+		if (num <= 0 || *endptr || do_problem((int)num) < 0) {
+			printf("Usage: %s [problem number]\n", *argv);
+			break;
+		}
 	}
 	return 0;
 }
